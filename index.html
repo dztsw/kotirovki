@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f6f7f9" media="(prefers-color-scheme: light)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Курсы">
+  <title>Курсы валют</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="pair">
+      <select id="base" aria-label="Базовая валюта"></select>
+      <button id="swap" class="icon-btn" aria-label="Поменять местами">⇄</button>
+      <select id="quote" aria-label="Котируемая валюта"></select>
+    </div>
+    <button id="fav" class="icon-btn" aria-label="В избранное">☆</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-label" id="pairLabel"></div>
+      <div class="hero-value" id="value">—</div>
+      <div class="hero-change" id="change"></div>
+    </section>
+
+    <div class="chips" id="ranges" role="tablist" aria-label="Период"></div>
+
+    <section class="chart-wrap">
+      <div id="chart" class="chart" aria-label="График курса"></div>
+      <div id="tooltip" class="tooltip" hidden></div>
+      <div id="status" class="status"></div>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="watch">
+      <h2>Избранное</h2>
+      <ul id="watchlist"></ul>
+    </section>
+
+    <p class="source" id="source"></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
