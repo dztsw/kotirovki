@@ -23,7 +23,10 @@
     <header class="bar">
       <div class="bar-row">
         <h1 id="tabTitle">Крипта</h1>
-        <span id="conn" class="conn"></span>
+        <div class="bar-act">
+          <span id="conn" class="conn"></span>
+          <button id="profileBtn" class="icon-btn avatar" aria-label="Профиль"><svg viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 19.5c1.2-3.3 3.9-5 7-5s5.8 1.7 7 5"/></svg></button>
+        </div>
       </div>
       <p id="tabSub" class="bar-sub"></p>
       <label class="search">
@@ -71,6 +74,67 @@
         <dl id="dStats" class="stats"></dl>
         <p id="dSource" class="note"></p>
         <button id="dRemove" class="text-btn" hidden>Убрать из списка</button>
+      </div>
+    </section>
+
+    <section id="profile" class="detail" hidden aria-modal="true" role="dialog" aria-labelledby="pTitle">
+      <header class="d-bar">
+        <button id="pBack" class="icon-btn" aria-label="Назад"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="d-title"><b id="pTitle">Профиль</b><small>Данные хранятся на этом устройстве</small></div>
+        <span class="icon-btn" aria-hidden="true"></span>
+      </header>
+      <div class="d-scroll">
+        <section class="p-sec">
+          <h2>Портфель</h2>
+          <div id="pTotals" class="p-totals"></div>
+          <ul id="pList" class="list"></ul>
+          <form id="pForm" class="p-form" hidden>
+            <label>Инструмент<select id="pInst"></select></label>
+            <div class="p-form-row">
+              <label>Количество<input id="pQty" type="number" inputmode="decimal" step="any" min="0" required placeholder="0,5"></label>
+              <label>Цена покупки<input id="pBuy" type="number" inputmode="decimal" step="any" min="0" placeholder="текущая"></label>
+            </div>
+            <div class="p-form-row">
+              <button type="submit" class="btn primary">Сохранить</button>
+              <button type="button" id="pCancel" class="btn">Отмена</button>
+            </div>
+            <button type="button" id="pDelete" class="text-btn" hidden>Удалить позицию</button>
+          </form>
+          <button id="pAdd" class="btn wide">+ Добавить позицию</button>
+        </section>
+
+        <section class="p-sec">
+          <h2>Настройки</h2>
+          <div class="p-row"><span>Тема</span>
+            <div id="pTheme" class="seg seg-text">
+              <button data-v="system">Авто</button><button data-v="dark">Тёмная</button><button data-v="light">Светлая</button>
+            </div>
+          </div>
+          <div class="p-row"><span>Биржа для крипты</span>
+            <div id="pEx" class="seg seg-text">
+              <button data-v="auto">Авто</button><button data-v="binance">Binance</button><button data-v="bybit">Bybit</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="p-sec">
+          <h2>Источники данных</h2>
+          <ul id="pDiag" class="diag"></ul>
+          <button id="pCheck" class="btn wide">Проверить все источники</button>
+        </section>
+
+        <section class="p-sec">
+          <h2>Резервная копия</h2>
+          <p class="note">Избранное, списки, портфель и настройки. Скопируйте текст и вставьте на другом устройстве.</p>
+          <div class="p-form-row">
+            <button id="pExport" class="btn">Скопировать</button>
+            <button id="pImport" class="btn">Восстановить</button>
+          </div>
+          <textarea id="pBackup" class="p-backup" hidden spellcheck="false" placeholder="Вставьте сюда резервную копию"></textarea>
+          <button id="pRestore" class="btn primary wide" hidden>Применить копию</button>
+          <p id="pBackupMsg" class="note"></p>
+          <button id="pReset" class="text-btn">Сбросить все данные</button>
+        </section>
       </div>
     </section>
   </div>

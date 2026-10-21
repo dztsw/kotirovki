@@ -1,5 +1,5 @@
 // Офлайн-кэш: оболочка приложения — cache-first, данные курсов — network-first с откатом на кэш.
-const VERSION = 'v2';
+const VERSION = 'v3';
 const SHELL = ['./', 'index.html', 'style.css', 'app.js', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'vendor/lightweight-charts.standalone.production.js'];
 
 self.addEventListener('install', e => {
